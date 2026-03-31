@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 // The uri string must be the connection string for the database (obtained on Atlas).
-const uri = "mongodb+srv://<user>:<password>@ckmdb.5oxvqja.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://dbuser:my415mongopass@classexample1.xnr7nvq.mongodb.net/?appName=ClassExample1";
 // Make sure the package.json contains:
 //   "dependencies": {
 //    "express": "^4.18.2",
@@ -9,9 +9,9 @@ const uri = "mongodb+srv://<user>:<password>@ckmdb.5oxvqja.mongodb.net/?retryWri
 
 // Alternatively, to not expose the access keys, you may do:
 // MUST RUN: npm install dotenv  ON CONSOLE to begin
-// require('dotenv').config();  // To make the environment vars work, package.json must contain dependency-> "dotenv": "^16.0.0"
+// require('dotenv').config(); // To make the environment vars work, package.json must contain dependency-> "dotenv": "^16.0.0"
 // Then get the parameters hidden in .env do:
-// Do this=> const uri = process.env.mongo_uri;
+// Do this=>const uri = process.env.mongo_uri;
 // We have also hidden the access keys in .env so alternatively we may use them:
 // so in this case, do these =>
 // const user = process.env.user;
@@ -53,8 +53,8 @@ console.log("Looking for: " + searchKey);
 
 async function run() {
   try {
-    const database = client.db('ckmdb');
-    const parts = database.collection('cmps415');
+    const database = client.db('MyDBexample');
+    const parts = database.collection('MyStuff');
 
     // Hardwired Query for a part that has partID '12345'
     // const query = { partID: '12345' };
